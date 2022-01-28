@@ -1,0 +1,15 @@
+---
+version: "3"
+
+services:
+  shelly-plug:
+    container_name: shelly-plug
+    build: .
+    image: php:8-apache
+    ports:
+      - "9924:80"
+    environment:
+      - SHELLY_HOSTNAME='192.168.15.2'
+      - SHELLY_HTTP_USERNAME=''
+      - SHELLY_HTTP_PASSWORD=''
+    restart: unless-stopped
