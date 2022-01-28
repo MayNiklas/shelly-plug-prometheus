@@ -5,7 +5,7 @@ services:
   shelly-plug:
     container_name: shelly-plug
     build: .
-    image: php:8-apache
+    image: mayniki/shelly-plug-prometeus
     ports:
       - "9924:80"
     environment:
