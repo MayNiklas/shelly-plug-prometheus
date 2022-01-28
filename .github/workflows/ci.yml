@@ -17,14 +17,9 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
-      - name: Run Docker container.
+      - name: docker-compose up -d
         run: >
-          docker run -d -p 9924:80 --name shelly-plug \
-            -e SHELLY_HOSTNAME='my-shelly-plug-host-or-ip' \
-            -e SHELLY_HTTP_USERNAME='username' \
-            -e SHELLY_HTTP_PASSWORD='password' \
-            -v "$PWD":/var/www/html \
-            php:8-apache
+          docker-compose up -d
 
       - name: Inspect Docker container.
         run: >
